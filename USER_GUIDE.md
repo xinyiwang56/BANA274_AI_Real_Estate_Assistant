@@ -6,7 +6,21 @@ A practical guide to getting the most out of all four RealtyAI tools.
 
 ## Opening the Notebook
 
-1. Open your terminal and navigate to your project folder:
+**First, download the project from GitHub:**
+
+1. Go to the repository page on GitHub
+2. Click the green **Code** button → **Download ZIP**
+3. Unzip the downloaded file — you'll get a folder called `RealEstateAI`
+4. Move that folder somewhere easy to find (e.g. your Desktop)
+
+> If you're comfortable with Git, you can also clone it:
+> ```bash
+> git clone https://github.com/xinyiwang56/realtyai.git
+> ```
+
+**Then open the notebook:**
+
+1. Open your terminal and navigate to the folder:
    ```bash
    cd ~/Desktop/RealEstateAI
    ```
@@ -16,6 +30,8 @@ A practical guide to getting the most out of all four RealtyAI tools.
    ```
 3. Click **RealEstateAI.ipynb** in the browser tab that opens
 4. Run the first three setup cells (Shift + Enter on each) until you see `✅ Client ready`
+
+> New to terminal or Jupyter? See [SETUP.md](SETUP.md) for a step-by-step walkthrough.
 
 ---
 
