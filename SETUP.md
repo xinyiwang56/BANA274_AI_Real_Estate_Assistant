@@ -47,6 +47,8 @@ pip install anthropic
 3. Click **Create Key**, give it a name (e.g. `realtyai`), and copy it
 4. Save it somewhere safe — you won't be able to see it again
 
+> **💳 Note on cost:** New accounts get a small amount of free credits to start. After that, you'll need to add a payment method at [console.anthropic.com](https://console.anthropic.com). Generating a listing description or email typically costs less than $0.01, so normal usage stays very affordable. You can set a monthly spending limit in your account settings to avoid surprises.
+
 ---
 
 ## Step 5 — Set your API Key
