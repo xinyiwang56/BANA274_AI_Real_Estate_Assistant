@@ -20,7 +20,7 @@ Four Claude-powered tools that help real estate professionals write faster and b
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/xinyiwang56/BANA274_AI_Real_Estate_Assistant
+git clone https://github.com/your-username/realtyai.git
 cd realtyai
 ```
 
@@ -98,7 +98,9 @@ result = generate(chosen_system, custom_input)
 - Python 3.8+
 - `anthropic` SDK
 - Jupyter Notebook or JupyterLab
-- Anthropic API key ([get one free](https://console.anthropic.com))
+- Anthropic API key ([get one at console.anthropic.com](https://console.anthropic.com))
+
+> **💳 API cost:** New accounts get free starter credits. After that, usage is pay-as-you-go — each generation typically costs less than $0.01. You can set a monthly spending cap in your Anthropic account settings.
 
 ---
 
