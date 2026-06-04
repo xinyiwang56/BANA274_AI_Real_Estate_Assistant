@@ -1,127 +1,66 @@
 # ⚙️ RealtyAI — Setup Guide
 
-Follow these steps to get RealtyAI running on your computer from scratch.
+RealtyAI runs entirely in your browser. There's nothing to install.
 
 ---
 
-## Step 1 — Check that Python is installed
+## Step 1 — Download the app
 
-Open your terminal and run:
-
-```bash
-python --version
-```
-
-You should see something like `Python 3.10.x`. If you get an error, download Python at [python.org/downloads](https://python.org/downloads) and install it, then come back.
+1. Go to the GitHub repository page
+2. Click the green **Code** button → **Download ZIP**
+3. Unzip the file and move the `RealEstateAI` folder somewhere easy to find (e.g. your Desktop)
 
 ---
 
-## Step 2 — Install Jupyter Notebook
+## Step 2 — Open the app
 
-If you don't have Jupyter yet:
+Open the `RealEstateAI` folder and double-click **RealEstateAI.html**
 
-```bash
-pip install notebook
-```
+It will open in your default browser. That's it — no installation needed.
 
-To verify it installed:
-
-```bash
-jupyter --version
-```
+> Works in Chrome, Safari, Firefox, and Edge on desktop, tablet, and phone.
 
 ---
 
-## Step 3 — Install the Anthropic SDK
+## Step 3 — Get an Anthropic API Key
 
-```bash
-pip install anthropic
-```
-
----
-
-## Step 4 — Get an Anthropic API Key
+RealtyAI uses Claude (by Anthropic) to generate content. You need a free API key to use it:
 
 1. Go to [console.anthropic.com](https://console.anthropic.com) and create a free account
 2. Click **API Keys** in the left sidebar
-3. Click **Create Key**, give it a name (e.g. `realtyai`), and copy it
-4. Save it somewhere safe — you won't be able to see it again
+3. Click **Create Key**, give it any name (e.g. `realtyai`), and copy it
 
-> **💳 Note on cost:** New accounts get a small amount of free credits to start. After that, you'll need to add a payment method at [console.anthropic.com](https://console.anthropic.com). Generating a listing description or email typically costs less than $0.01, so normal usage stays very affordable. You can set a monthly spending limit in your account settings to avoid surprises.
-
----
-
-## Step 5 — Set your API Key
-
-**Mac / Linux** — paste this in your terminal (replace with your actual key):
-
-```bash
-export ANTHROPIC_API_KEY="sk-ant-api03-..."
-```
-
-**Windows** — run this in Command Prompt:
-
-```cmd
-set ANTHROPIC_API_KEY=sk-ant-api03-...
-```
-
-> **Tip:** You don't have to do this every time. The notebook will securely prompt you for your key at runtime if it's not already set — nothing gets saved to disk.
+> **💳 Cost:** New accounts get free starter credits. After that, each generation typically costs less than $0.01. You can set a monthly spending cap in your account settings at [console.anthropic.com](https://console.anthropic.com).
 
 ---
 
-## Step 6 — Download the notebook
+## Step 4 — Enter your API Key in the app
 
-If you received the files directly, place `RealEstateAI.ipynb` in a folder on your Desktop or Documents, for example:
+1. Open the app in your browser
+2. At the top of the dashboard you'll see an **Anthropic API Key** field
+3. Paste your key and click **Save Key**
+4. You'll see ✅ **API key saved** — you're ready to go
 
-```
-Desktop/
-└── RealEstateAI/
-    ├── RealEstateAI.ipynb
-    └── RealEstateAI.html
-```
+> Your key is stored in your browser only. It is never sent to any external server.
 
 ---
 
-## Step 7 — Launch the notebook
+## You're all set!
 
-In your terminal, navigate to the folder:
-
-```bash
-cd ~/Desktop/RealEstateAI
-```
-
-Then launch Jupyter:
-
-```bash
-jupyter notebook
-```
-
-Your browser will open automatically. Click **RealEstateAI.ipynb** to open it.
-
----
-
-## Step 8 — Run the setup cells
-
-Inside the notebook, run the first three cells in order (click each cell, then press **Shift + Enter**):
-
-1. **Cell 1** — installs the `anthropic` package
-2. **Cell 2** — imports libraries
-3. **Cell 3** — connects to the API (you'll be prompted for your key here if you didn't set it in Step 5)
-
-Once you see `✅ Client ready`, you're all set!
+Pick a tool from the left sidebar and start generating. See [USER_GUIDE.md](USER_GUIDE.md) for tips on how to use each tool.
 
 ---
 
 ## Troubleshooting
 
-**`pip: command not found`**
-Try `pip3` instead of `pip`, or `python -m pip install anthropic`.
+**The page looks broken or blank**
+Make sure you're opening the `.html` file in a browser, not a text editor. Right-click the file → Open With → choose your browser.
 
-**`jupyter: command not found`**
-Try `python -m notebook` to launch Jupyter without the `jupyter` shortcut.
+**"Invalid API key" error**
+Double-check your key at [console.anthropic.com](https://console.anthropic.com). Make sure there are no extra spaces when you paste it, then click Save Key again.
 
-**`AuthenticationError` or invalid API key**
-Double-check your key at [console.anthropic.com](https://console.anthropic.com). Make sure there are no extra spaces when you paste it.
+**Key not saving between sessions**
+Some browsers block localStorage in private/incognito mode. Try opening the app in a regular browser window.
 
-**Notebook doesn't open in browser**
-Copy the URL shown in the terminal (starts with `http://localhost:8888/...`) and paste it into your browser manually.
+**Nothing happens when I click Generate**
+Make sure your API key is saved first (you should see ✅ API key saved). If the key is saved and it still doesn't work, check that you have credits remaining at [console.anthropic.com](https://console.anthropic.com).
