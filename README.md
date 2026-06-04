@@ -1,127 +1,82 @@
-# 🏠 RealtyAI — AI Real Estate Writing Assistant
+# 🏠 RealtyAI — AI Writing Assistant for Real Estate
 
-Four Claude-powered tools that help real estate professionals write faster and better — from MLS listings to lead replies, client briefs, and marketing emails.
-
+Four AI-powered tools built for real estate professionals. Pick a tool, paste your details, and let AI do the writing — no prompting skills needed.
 ---
 
 ## Tools
 
-| # | Tool | What it does |
-|---|------|-------------|
-| 🏡 | **Listing Description** | Generates MLS-ready property copy (150–220 words, flowing paragraphs) |
-| 💬 | **Lead Reply** | Auto-drafts warm, personalized email responses to buyer/seller inquiries |
-| 📋 | **Client Summary** | Transforms raw call notes into structured CRM briefs |
-| ✉️ | **Marketing Email** | Writes campaign-ready listing emails with subject line and CTA |
+| Tool | What it does |
+|------|-------------|
+| 🏡 **Listing Description** | Generates MLS-ready property copy in seconds |
+| 💬 **Lead Reply** | Drafts warm, personalized responses to buyer/seller inquiries |
+| 📋 **Client Summary** | Turns messy call notes into clean CRM briefs |
+| ✉️ **Marketing Email** | Writes campaign-ready listing emails with subject line and CTA |
 
 ---
 
-## Quickstart
+## How to Use
 
-### 1. Clone the repo
+RealtyAI runs entirely in your browser — no installation, no app to download.
 
-```bash
-git clone https://github.com/your-username/realtyai.git
-cd realtyai
-```
-
-### 2. Install dependencies
-
-```bash
-pip install anthropic
-```
-
-### 3. Set your API key
-
-Get a free key at [console.anthropic.com](https://console.anthropic.com), then set it as an environment variable:
-
-```bash
-export ANTHROPIC_API_KEY="sk-ant-api03-..."
-```
-
-Or let the notebook prompt you securely at runtime (no hardcoding needed).
-
-### 4. Open the notebook
-
-```bash
-jupyter notebook RealEstateAI.ipynb
-```
-
-Run the cells top to bottom, or jump straight to any individual tool section.
+1. **Open the app** — download this repo and open `RealEstateAI.html` in any browser
+2. **Enter your Anthropic API key** — paste it into the key field and click **Save Key**. Your key is stored in your browser only and never sent to any server
+3. **Pick a tool** from the left sidebar
+4. **Paste your details** into the input box
+5. **Click Generate** — your result appears in seconds, ready to edit and copy
 
 ---
 
-## Usage
+## Getting an API Key
 
-### Run a single tool
+RealtyAI uses the Anthropic API (Claude). You need your own key to use the app:
 
-Each tool has its own notebook section. Paste your input and run the cell:
+1. Go to [console.anthropic.com](https://console.anthropic.com) and create a free account
+2. Click **API Keys** → **Create Key** → copy it
+3. Paste it into the app's API key field and click **Save Key**
 
-```python
-listing_input = """
-4BR/3BA modern farmhouse, 2,200 sqft. Open concept kitchen/living,
-vaulted ceilings, solar panels, EV charger. Cul-de-sac in top-rated
-school district. 3-car garage. Built 2019.
-"""
-listing_result = generate(SYSTEM_LISTING, listing_input)
-```
+> **💳 Cost:** New accounts get free starter credits. After that, each generation typically costs less than $0.01. You can set a monthly spending cap in your Anthropic account settings.
 
-### Run all four tools at once
+---
 
-```python
-all_results = run_all(
-    listing_details="...",
-    lead_message="...",
-    client_notes="...",
-    listing_for_email="..."
-)
-```
+## Features
 
-### Export results to a file
+- **Instant generation** — raw property details to polished MLS copy in under 10 seconds
+- **Agent-tuned prompts** — built specifically for real estate language, not generic marketing fluff
+- **Fully editable output** — every result is a starting point; edit freely before publishing
+- **Your data, your key** — API key lives in your browser only; no client notes or listing details are stored on any server
+- **Works anywhere** — browser-based, no install needed; works on desktop, tablet, and phone
 
-```python
-export_results(all_results)
-# Saves to: realtyai_results_YYYYMMDD_HHMMSS.txt
-```
+---
 
-### One-off custom call
+## Pricing
 
-```python
-chosen_system = SYSTEM_LEAD   # swap in any system prompt
-custom_input = "Your text here..."
-result = generate(chosen_system, custom_input)
-```
+| Plan | Price | Best for |
+|------|-------|----------|
+| Solo Agent | $49/month | Individual agents getting started |
+| Pro Agent ⭐ | $99/month | Active agents who write daily |
+| Team / Broker | $199/month | Brokerages and growing teams |
+
+> Note: Pricing shown in the UI is a demo. To deploy with real payments, connect a billing provider such as Stripe.
 
 ---
 
 ## Requirements
 
-- Python 3.8+
-- `anthropic` SDK
-- Jupyter Notebook or JupyterLab
-- Anthropic API key ([get one at console.anthropic.com](https://console.anthropic.com))
-
-> **💳 API cost:** New accounts get free starter credits. After that, usage is pay-as-you-go — each generation typically costs less than $0.01. You can set a monthly spending cap in your Anthropic account settings.
-
----
-
-## Model
-
-Uses **`claude-sonnet-4-20250514`** by default. To switch models, change the `MODEL` constant in the notebook:
-
-```python
-MODEL = "claude-opus-4-20250514"   # more powerful
-MODEL = "claude-haiku-4-5-20251001" # faster / cheaper
-```
+- Any modern browser (Chrome, Safari, Firefox, Edge)
+- An Anthropic API key ([get one here](https://console.anthropic.com))
+- No installs, no Python, no terminal
 
 ---
 
 ## Project Structure
 
 ```
-realtyai/
-├── RealEstateAI.ipynb   # Main notebook — all four tools + batch mode
-├── RealEstateAI.html    # Static HTML preview of the notebook
-└── README.md
+RealEstateAI/
+├── RealEstateAI.html    # The full app — open this in your browser
+├── RealEstateAI.ipynb   # Original Jupyter notebook version
+├── README.md
+├── SETUP.md
+└── USER_GUIDE.md
 ```
 
 ---
